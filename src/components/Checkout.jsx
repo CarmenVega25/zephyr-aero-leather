@@ -6,7 +6,7 @@ import { FaEdit } from "react-icons/fa"
 import getChangeQuantity from "../../lib/getChangeQuantity"
 
 export default function Checkout({ products }) {
-    const { cartItems, addToCart, updateQuantity, removeFromCart } = useCart()
+    const { cartItems, addToCart, updateQuantity, removeFromCart, clearCart } = useCart()
 
     const getItemInfo = item => {
         const itemInfo = products.filter(product => product.id === item.id)[0]
@@ -113,6 +113,14 @@ export default function Checkout({ products }) {
                         </li>)
                     })}
                 </ul>
+                {cartItems.length > 0 && (
+                    <button
+                        onClick={clearCart}
+                        className="mt-2 mb-2 px-4 py-1 bg-red-600 text-white text-sm rounded hover:bg-red-700"
+                    >
+                        Clear Cart
+                    </button>
+                )}
                 <hr />
                 <div className="grid grid-cols-2 text-sm mt-2">
                     <p className="font-bold">Total</p>
