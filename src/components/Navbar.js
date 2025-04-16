@@ -136,17 +136,6 @@ const Navbar = ({ initialUser, allProducts }) => {
                           </li>)
                         })}
                       </ul>
-                      {cartItems.length > 0 && (
-                        <div className="mt-2 mb-4">
-                          <button
-                            onClick={clearCart}
-                            className="px-4 py-2 bg-red-600 text-white text-sm rounded hover:bg-red-700"
-                          >
-                            Clear Cart
-                          </button>
-                        </div>
-                      )}
-
                       {/* Checkout Button */}
                       <button
                         className="w-full bg-blue-500 text-white mt-4 p-2 rounded"

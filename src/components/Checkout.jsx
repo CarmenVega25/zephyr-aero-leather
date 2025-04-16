@@ -115,14 +115,6 @@ export default function Checkout({ products }) {
                         </li>)
                     })}
                 </ul>
-                {cartItems.length > 0 && (
-                    <button
-                        onClick={clearCart}
-                        className="mt-2 mb-2 px-4 py-1 bg-red-600 text-white text-sm rounded hover:bg-red-700"
-                    >
-                        Clear Cart
-                    </button>
-                )}
                 <hr />
                 <div className="grid grid-cols-2 text-sm mt-2">
                     <p className="font-bold">Total</p>
