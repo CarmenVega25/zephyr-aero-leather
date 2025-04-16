@@ -162,18 +162,8 @@ export const CartProvider = ({ children }) => {
   }
 };
 
-        if (!response.ok) throw new Error("Failed to remove item from cart");
 
-        setCartItems((prevItems) => prevItems.filter((item) => item.id !== productId));
-        await fetchUserCart();
-      } catch (error) {
-        console.error("Error removing from cart:", error.message);
-      }
-    } else {
-      const updatedCart = cartItems.filter((item) => item.id !== productId);
-      saveGuestCart(updatedCart);
-    }
-  };
+  setCartItems((prevItems) => prevItems.filter((item) => item.id !== productId));
 
   const clearCart = async () => {
     if (isAuthenticated) {
@@ -308,5 +298,6 @@ export const CartProvider = ({ children }) => {
       {children}
     </CartContext.Provider>
   );
+}
 
 export const useCart = () => useContext(CartContext);
